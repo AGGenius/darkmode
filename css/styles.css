@@ -1,0 +1,208 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header {
+    width: 98%;
+    height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding-top: 10px;
+}
+
+.header__tittle {
+    width: 80%;
+    height: 50px;
+
+    padding-left: 1%;
+}
+
+.darkMode__wrap {
+    width: 20%;
+    min-width: 150px;
+    height: 50px;
+    gap: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 1%;
+}
+
+.darkMode__text {
+    font-weight: bold;
+}
+
+.darkMode__button {
+    width: 45px;
+    height: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: hsl(0deg 0% 79.61%);
+    border-radius: 50px;
+
+    padding-left: .2em;
+    padding-right: .2em;
+}
+
+.darkMode__button__img {
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+}
+
+.darkMode__button--sun {
+    background-color: rgb(255 208 1); 
+}
+
+.darkMode__button--moon { 
+    background-color: rgb(12, 98, 210); 
+}
+
+main {
+    width: 98%;
+    height: 100%;
+}
+
+.main__article {
+    gap: 2em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main__article__img {
+    width: 100%;
+    height: auto;
+}
+
+.main__article__wrap {
+    width: 75%;
+    height: 50vh;
+    gap: 2em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main__article__text--tittle {
+    text-align: center;
+}
+
+/* Light mode CSS */
+.dm__background {
+    background-color: #f5f5f5;
+}
+
+.dm__tittle, .dm__text {
+    color: #1f1f1f;
+}
+
+/* Dark mode CSS */
+
+.dm__background.darkMode {
+    background-color: #111111;
+}
+
+.dm__tittle.darkMode {
+    color: yellow;
+}
+
+.dm__text.darkMode {
+    color: #f1f1f1;
+}
+
+/* Slider animation --> */
+.darkMode__button--sun.darkMode {
+    animation: buttonAnimationDarkmodeSun 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.darkMode__button--moon.darkMode {  
+    animation: buttonAnimationDarkmodeMoon 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.darkMode__button--sun {
+    animation: buttonAnimationLightmodeSun 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.darkMode__button--moon {
+    animation: buttonAnimationLightmodeMoon 0s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes buttonAnimationDarkmodeMoon {
+    0% {
+        transform: translate(-15px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0px,0);   
+        opacity: 1;
+    }
+}
+
+@keyframes buttonAnimationDarkmodeSun {
+    0% {    
+        transform: translate(0px,0);   
+        opacity: 1;
+    }
+    100% {
+        transform: translate(15px,0);   
+        opacity: 0;
+    }
+}
+
+@keyframes buttonAnimationLightmodeMoon {
+    0% {    
+        transform: translate(0px,0);   
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-15px,0);   
+        opacity: 0;
+    }
+}
+
+@keyframes buttonAnimationLightmodeSun {
+    0% {    
+        transform: translate(15px,0);   
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0px,0); 
+        opacity: 1;  
+    }
+}
